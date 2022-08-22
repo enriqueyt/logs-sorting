@@ -27,10 +27,15 @@ const mergeLog = (logs, log) => {
   let mid = Math.floor(max/2);
 
   while (low < max) {
-    if (Date.parse(logs[mid].value.date) < Date.parse(log.value.date)) {
-      max = mid;
-    } else {
-      low = mid + 1;
+    try {
+      if (Date.parse(logs[mid].value.date) < Date.parse(log.value.date)) {
+        max = mid;
+      } else {
+        low = mid + 1;
+      }
+
+    } catch (e) {
+      console.log(e);
     }
 
     mid = Math.floor((low+max)/2);
@@ -74,3 +79,4 @@ module.exports.validateLogData = validateLogData;
 module.exports.sortAsc = sortAsc;
 module.exports.mergeLog = mergeLog;
 module.exports.addCoordinates = addCoordinates;
+module.exports.setVisit = setVisit;

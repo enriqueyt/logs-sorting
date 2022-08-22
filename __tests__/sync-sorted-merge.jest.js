@@ -1,4 +1,4 @@
-const { validateLogData, sortAsc, mergeLog, addCoordinates } = require("../solution/sync-sorted-merge");
+const { validateLogData, mergeLog, addCoordinates } = require("../solution/sync-sorted-merge");
 
 describe('sync Sorted Logs', () => {
     beforeAll(() => {
