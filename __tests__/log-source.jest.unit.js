@@ -6,9 +6,11 @@ describe("Log Source Behaviors", () => {
     let entry = source.pop();
     expect(new Date() > entry.date).toBeTruthy();
     expect(entry.msg).toBeTruthy();
+    // get the entry for second time (nestet data)
     entry = source.pop();
     expect(new Date() > entry.date).toBeTruthy();
     expect(entry.msg).toBeTruthy();
+    // when we have a pop last log false
     source.last.date = new Date();
     entry = source.pop();
     expect(entry).toBeFalsy();
